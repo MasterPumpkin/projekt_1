@@ -202,14 +202,15 @@ if __name__ == '__main__':
         prompt = f'Enter a number btw. 1 and {len(TEXTS)} to select: '
         text_number_str = input(prompt).strip()
 
-        if text_number_str.isdigit():
+        try:
             text_number = int(text_number_str)
-            if 1 <= text_number <= len(TEXTS):
-                # Změna pořadí: uživatel zadává 1 - 3, ale indexujeme od 0
-                analyze(TEXTS[text_number - 1])
-            else:
-                sys.exit('Invalid number, terminating the program..')
-        else:
+        except ValueError:
             sys.exit('You did not enter a number, terminating the program..')
+
+        if 1 <= text_number <= len(TEXTS):
+            # Změna pořadí: uživatel zadává 1 - 3, ale indexujeme od 0
+            analyze(TEXTS[text_number - 1])
+        else:
+            sys.exit('Invalid number, terminating the program..')
     else:
-        sys.exit('unregistered user, terminating the program..')
+        sys.exit('Unregistered user, terminating the program..')
