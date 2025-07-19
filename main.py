@@ -176,7 +176,7 @@ def print_statistics(
     print(f'There are {len(categories["digit"])} numeric strings.')
     print(f'The sum of all the numbers {total_digits}')
     print(SEPARATOR_LINE)
-    print('LEN|  OCCURRENCES  |NR.')
+    print('LEN|  OCCURRENCES       |NR.')
     print(SEPARATOR_LINE)
     for key, value in sorted(word_lengths.items()):
         print(f'{key:>3}|{"*" * value:<20}|{value:>2}')
